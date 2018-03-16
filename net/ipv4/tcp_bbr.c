@@ -862,6 +862,7 @@ static void bbr_init(struct sock *sk)
 	struct bbr *bbr = inet_csk_ca(sk);
 
 	bbr->prior_cwnd = 0;
+	tp->snd_ssthresh = TCP_INFINITE_SSTHRESH;
 	bbr->rtt_cnt = 0;
 	bbr->next_rtt_delivered = tp->delivered;
 	bbr->prev_ca_state = TCP_CA_Open;
@@ -913,7 +914,7 @@ static u32 bbr_undo_cwnd(struct sock *sk)
 static u32 bbr_ssthresh(struct sock *sk)
 {
 	bbr_save_cwnd(sk);
-	return TCP_INFINITE_SSTHRESH;	 /* BBR does not use ssthresh */
+	return tcp_sk(sk)->snd_ssthresh;
 }
 
 static size_t bbr_get_info(struct sock *sk, u32 ext, int *attr,
