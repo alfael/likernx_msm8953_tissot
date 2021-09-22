@@ -93,6 +93,10 @@
 #define HAP_VMAX_SHIFT			1
 #define HAP_VMAX_MIN_MV			116
 #define HAP_VMAX_MAX_MV			3596
+#define HAP_VMAX_MAX_MV_STRONG		3596
+#define HAP_VMAX_MAX_MV_USER		3006
+#define HAP_MIN_TIME_STRONG		100
+#define HAP_MIN_TIME_CALL		1000
 
 #define HAP_ILIM_CFG_REG(chip)		(chip->base + 0x52)
 #define HAP_ILIM_SEL_MASK		BIT(0)
