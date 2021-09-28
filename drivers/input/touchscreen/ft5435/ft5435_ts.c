@@ -4030,7 +4030,8 @@ INIT_WORK(&data->work_vr, ft5435_change_vr_switch);
 	}
 
 	INIT_DELAYED_WORK(&data->resume_work, ft5435_resume_func);
-	ft5435_resume_workqueue = create_workqueue("fts_resume_wq");
+	ft5435_resume_workqueue = alloc_workqueue("fts_resume_wq",
+			    WQ_HIGHPRI | WQ_MEM_RECLAIM, 0);
 
 	err = device_create_file(&client->dev, &dev_attr_fw_name);
 	if (err) {
@@ -4398,12 +4399,16 @@ static struct i2c_driver ft5435_ts_driver = {
 static int __init ft5435_ts_init(void)
 {
 	printk("tony_test:[%s]\n", __FUNCTION__);
-	ft5435_wq = create_singlethread_workqueue("ft5435_wq");
+	ft5435_wq = alloc_workqueue("ft5435_wq",
+			    WQ_HIGHPRI | WQ_UNBOUND |
+			    WQ_MEM_RECLAIM, 0);
 	if (!ft5435_wq) {
 		printk("Creat ft5435 workqueue failed. \n");
 		return -ENOMEM;
 	}
-	ft5435_wq_cover = create_singlethread_workqueue("ft5435_wq_cover");
+	ft5435_wq_cover = alloc_workqueue("ft5435_wq_cover",
+			    WQ_HIGHPRI | WQ_UNBOUND |
+			    WQ_MEM_RECLAIM, 0);
 	if (!ft5435_wq_cover) {
 		printk("Creat ft5435_wq_cover workqueue failed. \n");
 		return -ENOMEM;

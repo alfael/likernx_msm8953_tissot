@@ -731,7 +731,9 @@ void fts_ctpm_upgrade_init(void)
 {
 	FTS_FUNC_ENTER();
 
-	touch_wq = create_singlethread_workqueue("touch_wq");
+	touch_wq = alloc_workqueue("touch_wq",
+			    WQ_HIGHPRI | WQ_UNBOUND |
+			    WQ_MEM_RECLAIM, 0);
 	if (touch_wq) {
 		INIT_WORK(&fw_update_work, fts_ctpm_update_work_func);
 		queue_work(touch_wq, &fw_update_work);
