@@ -530,6 +530,19 @@ KBUILD_AFLAGS	+= $(CLANG_FLAGS)
 endif
 
 
+ifdef CONFIG_POLLY_CLANG
+$(info ENABLE POLLY CLANG OPTIMIZATION)
+KBUILD_CFLAGS	+= -mllvm -polly \
+		   -mllvm -polly-run-dce \
+		   -mllvm -polly-run-inliner \
+		   -mllvm -polly-opt-fusion=max \
+		   -mllvm -polly-ast-use-context \
+		   -mllvm -polly-detect-keep-going \
+		   -mllvm -polly-vectorizer=stripmine \
+		   -mllvm -polly-invariant-load-hoisting
+endif
+
+
 ifeq ($(mixed-targets),1)
 # ===========================================================================
 # We're called with mixed targets (*config and build targets).
