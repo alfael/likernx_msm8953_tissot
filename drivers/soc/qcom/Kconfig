@@ -1,6 +1,14 @@
 #
 # QCOM Soc drivers
 #
+
+config STATE_NOTIFIER
+	bool "State Notifier"
+	default n
+	help
+	  A unified display state notifier for kernel drivers for easy porting
+	  between different devices.
+
 config QCOM_CPUSS_DUMP
 	bool "CPU Subsystem Dumping support"
 	help
