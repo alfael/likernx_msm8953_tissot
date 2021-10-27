@@ -691,7 +691,7 @@ endif
 
 ifdef CONFIG_LTO
 lto-flags	:= $(lto-clang-flags)
-KBUILD_CFLAGS	+= $(lto-flags)
+KBUILD_CFLAGS	+= $(lto-flags) --param=max-inline-insns-auto=1000
 
 DISABLE_LTO	:= $(DISABLE_LTO_CLANG)
 export DISABLE_LTO
