@@ -334,7 +334,7 @@ static int qup_i2c_wait_ready(struct qup_i2c_dev *qup, int op, bool val,
 			}
 		}
 
-		if (time_after(jiffies, timeout)) {
+		if (time_after(jiffies, msecs_to_jiffies(timeout))) {
 			ret = -ETIMEDOUT;
 			goto done;
 		}
@@ -802,7 +802,7 @@ static int qup_i2c_bam_do_xfer(struct qup_i2c_dev *qup, struct i2c_msg *msg,
 		dma_async_issue_pending(qup->brx.dma);
 	}
 
-	if (!wait_for_completion_timeout(&qup->xfer, TOUT_MAX * HZ)) {
+	if (!wait_for_completion_timeout(&qup->xfer, TOUT_MAX * msecs_to_jiffies(1000))) {
 		dev_err(qup->dev, "normal trans timed out\n");
 		ret = -ETIMEDOUT;
 	}
@@ -825,7 +825,7 @@ static int qup_i2c_bam_do_xfer(struct qup_i2c_dev *qup, struct i2c_msg *msg,
 		qup_i2c_flush(qup);
 
 		/* wait for remaining interrupts to occur */
-		if (!wait_for_completion_timeout(&qup->xfer, HZ))
+		if (!wait_for_completion_timeout(&qup->xfer, msecs_to_jiffies(1000)))
 			dev_err(qup->dev, "flush timed out\n");
 
 		qup_i2c_rel_dma(qup);
