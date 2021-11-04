@@ -759,7 +759,7 @@ static int credit_entropy_bits_safe(struct entropy_store *r, int nbits)
  *
  *********************************************************************/
 
-#define CRNG_RESEED_INTERVAL (300*HZ)
+#define CRNG_RESEED_INTERVAL (msecs_to_jiffies(300000))
 
 static DECLARE_WAIT_QUEUE_HEAD(crng_init_wait);
 
