@@ -262,7 +262,7 @@ static int ipa2_uc_send_ntn_setup_pipe_cmd(
 	result = ipa_uc_send_cmd((u32)(cmd.phys_base),
 				IPA_CPU_2_HW_CMD_OFFLOAD_CHANNEL_SET_UP,
 				IPA_HW_2_CPU_OFFLOAD_CMD_STATUS_SUCCESS,
-				false, 10*HZ);
+				false, msecs_to_jiffies(10000));
 	if (result)
 		result = -EFAULT;
 
