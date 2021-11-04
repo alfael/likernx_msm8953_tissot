@@ -1206,7 +1206,7 @@ void add_interrupt_randomness(int irq, int irq_flags)
 	}
 
 	if ((fast_pool->count < 64) &&
-	    !time_after(now, fast_pool->last + HZ))
+	    !time_after(now, fast_pool->last + msecs_to_jiffies(1000)))
 		return;
 
 	r = &input_pool;

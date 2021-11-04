@@ -424,7 +424,7 @@ int ipa2_tear_down_uc_offload_pipes(int ipa_ep_idx_ul,
 	result = ipa_uc_send_cmd((u32)(cmd.phys_base),
 				IPA_CPU_2_HW_CMD_OFFLOAD_TEAR_DOWN,
 				IPA_HW_2_CPU_OFFLOAD_CMD_STATUS_SUCCESS,
-				false, 10*HZ);
+				false, msecs_to_jiffies(10000));
 	if (result) {
 		IPAERR("fail to tear down dl pipe\n");
 		result = -EFAULT;
@@ -436,7 +436,7 @@ int ipa2_tear_down_uc_offload_pipes(int ipa_ep_idx_ul,
 	result = ipa_uc_send_cmd((u32)(cmd.phys_base),
 				IPA_CPU_2_HW_CMD_OFFLOAD_TEAR_DOWN,
 				IPA_HW_2_CPU_OFFLOAD_CMD_STATUS_SUCCESS,
-				false, 10*HZ);
+				false, msecs_to_jiffies(10000));
 	if (result) {
 		IPAERR("fail to tear down ul pipe\n");
 		result = -EFAULT;
