@@ -407,6 +407,7 @@ struct sock {
 	int			sk_gso_type;
 	unsigned int		sk_gso_max_size;
 	gfp_t			sk_allocation;
+	netdev_features_t	sk_route_forced_caps;
 	__u32			sk_txhash;
 
 	/*
