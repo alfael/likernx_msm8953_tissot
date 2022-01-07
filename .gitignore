@@ -126,4 +126,4 @@ Android.bp
 #
 #Ignoring kernel in package folder
 #
-package/Image/Image.gz-dtb
+package/Image.gz-dtb
