@@ -1,0 +1,48 @@
+**********************************************************
+==========================INFO===========================
+*********************************************************
+    - KERNEL NAME -> [BasiK]
+    - LINUX KERNEL VERSION -> [4.9.296]
+    - CUSTOM KERNEL VERSION -> [#leucine]
+    - LAST TOOLCHAIN VERSION AT RELEASE KERNEL DATE -> [vortex-clang(14)]
+    - TARGET ANDROID VERSION -> [12]
+    - LAST VERSION DATE -> [2022-01-11]
+    - Main purpose of this kernel is to be up to the
+      latest tag of linux 4.9 with the best delivery of
+      performance and battery to use as is.
+
+*********************************************************
+=========================FEATURE=========================
+*********************************************************
+    - DEFAULT GOVERNOR -> [SCHEDUTIL at RT priority with BACKPORT optimisation]
+    - DEFAULT I/O SCHEDULER -> [ANXIETY]
+    - DEFAULT TCP CONGESTION CONTROL -> [BBR/FQ_CODEL with backport optimization]
+    - LATENCY IS PREFERRED TO THROUGHPUT -> [SMOOTH EXPERIENCE with bad benchmark]
+    - TOOLCHAIN OPTIMIZATION -> [MCPU/MTUNE/LTO/O3/POLLY/FUNSAFE-MATH-OPTIMIZATIONS]
+    - MANY DEBUGGER DISABLED -> [PERFORMANCE/BATTERY GAIN]
+    - FIX DIRECT REFERENCE TO HZ
+    - ARM64 OPTIMIZATIONS
+    - MSM8953 OPTIMIZATIONS
+    - RAPID GC F2FS by arter97
+    - F2FS OPTIMIZATIONS
+    - EXT4 OPTIMIZATIONS
+    - WIREGUARD V1.0.20211208
+    - NETWORK IMPROVEMENT
+    - GPU IMPROVEMENT
+    - SOUND QUALITY IMPROVEMENT
+    - MEMORY MANAGEMENT IMPROVEMENT
+    - BATTERY IMPROVEMENT
+    - BOEFFLA WAKELOCK BLOCKER
+    - HIGH PRIORITY WORKQUEUE
+    - POWER EFFICIENT WORKQUEUE
+    - SCHED_RR IN PLACE OF SCHED_FIFIO -> [BETTER LATENCY]
+    - CPU SCHEDULER (CFS) TWEAKED FROM LIQUORIX/ZEN KERNEL
+    - DTS EAGLE
+    - DYNAMIC FSYNC V2 -> ENABLED BY DEFAULT
+    - ADRENOBOOST -> ENABLED BY DEFAULT
+    - PRLMK by DARKHZ replacement of LOW MEMORY KILLER
+    - KCAL
+    - SOUND CONTROL
+    - FAST CHARGE USB MODE
+    - BACKPORT OPTIMIZATION FROM UPSTREAM KERNEL VERSION 
+    - ZRAM WITH LZ4 COMPRESSION
