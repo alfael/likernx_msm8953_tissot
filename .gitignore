@@ -128,3 +128,4 @@ Android.bp
 #
 package/Image.gz-dtb
 build.log
+output/
