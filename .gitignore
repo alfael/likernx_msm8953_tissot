@@ -127,3 +127,4 @@ Android.bp
 #Ignoring kernel in package folder
 #
 package/Image.gz-dtb
+build.log
