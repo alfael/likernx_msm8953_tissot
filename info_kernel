@@ -2,11 +2,11 @@
 ==========================INFO===========================
 *********************************************************
     - KERNEL NAME -> [BasiK]
-    - LINUX KERNEL VERSION -> [4.9.296]
+    - LINUX KERNEL VERSION -> [4.9.297]
     - CUSTOM KERNEL VERSION -> [#leucine]
     - LAST TOOLCHAIN VERSION AT RELEASE KERNEL DATE -> [vortex-clang(14)]
     - TARGET ANDROID VERSION -> [12]
-    - LAST VERSION DATE -> [2022-01-11]
+    - LAST VERSION DATE -> [2022-01-14]
     - Main purpose of this kernel is to be up to the
       latest tag of linux 4.9 with the best delivery of
       performance and battery to use as is.
