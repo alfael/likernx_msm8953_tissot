@@ -54,9 +54,9 @@ done < arch/arm64/configs/protein_defconfig
 
 /bin/cp -rf $PATH_KERN $PATH_PACKAGE
 cd $PATH_PACKAGE
-if [ -f $PATH_OUTPUT_PACKAGE/$LOCALVERSION.$SUBLEVEL.zip ]; then
-  rm $PATH_OUTPUT_PACKAGE/$LOCALVERSION.$SUBLEVEL.zip
+if [ -f $PATH_OUTPUT_PACKAGE/$LOCALVERSION.$SUBLEVEL.vortex.zip ]; then
+  rm $PATH_OUTPUT_PACKAGE/$LOCALVERSION.$SUBLEVEL.vortex.zip
 fi
-zip -9 -r $PATH_OUTPUT_PACKAGE/$LOCALVERSION.$SUBLEVEL.zip ./*
+zip -9 -r $PATH_OUTPUT_PACKAGE/$LOCALVERSION.$SUBLEVEL.vortex.zip ./*
 cd -;
-echo Création du package: $LOCALVERSION.$SUBLEVEL.zip terminée !
+echo Création du package: $LOCALVERSION.$SUBLEVEL.vortex.zip terminée !
