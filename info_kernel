@@ -3,10 +3,11 @@
 *********************************************************
     - KERNEL NAME -> [BasiK]
     - LINUX KERNEL VERSION -> [4.9.297]
-    - CUSTOM KERNEL VERSION -> [#leucine]
-    - LAST TOOLCHAIN VERSION AT RELEASE KERNEL DATE -> [vortex-clang(14)]
+    - LMAST CAF TAG ANDROID 12 -> [LA.UM.10.6.2.r1-00900-89xx.0]
+    - CUSTOM KERNEL VERSION -> [#valine]
+    - LAST TOOLCHAIN VERSION AT RELEASE KERNEL DATE -> [vortex (clang v14)/EVA (gcc v12)]
     - TARGET ANDROID VERSION -> [12]
-    - LAST VERSION DATE -> [2022-01-14]
+    - LAST VERSION DATE -> [2022-01-26]
     - Main purpose of this kernel is to be up to the
       latest tag of linux 4.9 with the best delivery of
       performance and battery to use as is.
@@ -19,6 +20,7 @@
     - DEFAULT TCP CONGESTION CONTROL -> [BBR/FQ_CODEL with backport optimization]
     - LATENCY IS PREFERRED TO THROUGHPUT -> [SMOOTH EXPERIENCE with bad benchmark]
     - TOOLCHAIN OPTIMIZATION -> [MCPU/MTUNE/LTO/O3/POLLY/FUNSAFE-MATH-OPTIMIZATIONS]
+    - EVA TOOLCHAIN BUILD -> GCC CINLINE OPTIMIZATION
     - MANY DEBUGGER DISABLED -> [PERFORMANCE/BATTERY GAIN]
     - FIX DIRECT REFERENCE TO HZ
     - ARM64 OPTIMIZATIONS
@@ -41,8 +43,9 @@
     - DYNAMIC FSYNC V2 -> ENABLED BY DEFAULT
     - ADRENOBOOST -> ENABLED BY DEFAULT
     - PRLMK by DARKHZ replacement of LOW MEMORY KILLER
-    - KCAL
+    - SCREEN COLOR CONTROL
     - SOUND CONTROL
+    - VIBRATION CONTROL
     - FAST CHARGE USB MODE
     - BACKPORT OPTIMIZATION FROM UPSTREAM KERNEL VERSION 
     - ZRAM WITH LZ4 COMPRESSION
