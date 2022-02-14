@@ -2,12 +2,12 @@
 ==========================INFO===========================
 *********************************************************
     - KERNEL NAME -> [Protein]
-    - LINUX KERNEL VERSION -> [4.9.300]
+    - LINUX KERNEL VERSION -> [4.9.301]
     - LMAST CAF TAG ANDROID 12 -> [LA.UM.10.6.2.r1-01100-89xx.0]
     - CUSTOM KERNEL VERSION -> [#valine]
     - LAST TOOLCHAIN VERSION AT RELEASE KERNEL DATE -> [vortex (clang v14)/EVA (gcc v12)]
     - TARGET ANDROID VERSION -> [12]
-    - LAST VERSION DATE -> [2022-02-09]
+    - LAST VERSION DATE -> [2022-02-14]
     - Main purpose of this kernel is to be up to the
       latest tag of linux 4.9 with the best delivery of
       performance and battery to use as is.
