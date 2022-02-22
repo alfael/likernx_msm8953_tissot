@@ -48,7 +48,7 @@ int sysctl_tcp_retrans_collapse __read_mostly = 1;
 /* People can turn this on to work with those rare, broken TCPs that
  * interpret the window field as a signed quantity.
  */
-int sysctl_tcp_workaround_signed_windows __read_mostly = 0;
+int sysctl_tcp_workaround_signed_windows __read_mostly = 1;
 
 /* Default TSQ limit of four TSO segments */
 int sysctl_tcp_limit_output_bytes __read_mostly = 262144;
