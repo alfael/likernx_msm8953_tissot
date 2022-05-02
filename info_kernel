@@ -2,12 +2,12 @@
 ==========================INFO===========================
 *********************************************************
     - KERNEL NAME -> [Protein]
-    - LINUX KERNEL VERSION -> [4.9.311]
+    - LINUX KERNEL VERSION -> [4.9.312]
     - LAST CAF TAG ANDROID 12 -> [LA.UM.10.6.2.r1-01200-89xx.0]
     - CUSTOM KERNEL VERSION -> [#isoleucine]
     - LAST TOOLCHAIN VERSION AT RELEASE KERNEL DATE -> [vortex (clang v15) /proton (clang v13)/EVA (gcc v12)]
     - TARGET ANDROID VERSION -> [12]
-    - LAST VERSION DATE -> [2022-04-21]
+    - LAST VERSION DATE -> [2022-05-02]
     - Main purpose of this kernel is to be up to the
       latest tag of linux 4.9 with the best delivery of
       performance and battery to use as is.
@@ -16,7 +16,7 @@
 =========================FEATURE=========================
 *********************************************************
     - DEFAULT GOVERNOR -> [SCHEDUTIL at RT priority with BACKPORT optimisation]
-    - DEFAULT I/O SCHEDULER -> [MAPLE]
+    - DEFAULT I/O SCHEDULER -> [ANXIETY]
     - DEFAULT TCP CONGESTION CONTROL -> [BBR/FQ_CODEL with backport optimization]
     - TOOLCHAIN OPTIMIZATION -> [MCPU/MTUNE/LTO/O3/FUNSAFE-MATH-OPTIMIZATIONS]
     - EVA TOOLCHAIN BUILD -> GCC INLINE OPTIMIZATION
@@ -41,7 +41,6 @@
     - POWER EFFICIENT WORKQUEUE
     - SCHED_RR IN PLACE OF SCHED_FIFO -> [BETTER LATENCY]
     - CPU SCHEDULER (CFS) TWEAKED FROM LIQUORIX/ZEN KERNEL
-    - SCHED_CHILD_RUNS_FIRST ENABLED -> [BETTER RESPONSIVENESS]
     - DTS EAGLE
     - LASTER K'S DRIVER
     - DYNAMIC FSYNC V2 -> ENABLED BY DEFAULT
