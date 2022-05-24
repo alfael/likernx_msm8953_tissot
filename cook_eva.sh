@@ -9,13 +9,14 @@ export CROSS_COMPILE_ARM32=arm-eabi-
 export ARCH=arm64
 export SUBARCH=arm64
 export KBUILD_CFLAGS="-Wno-maybe-uninitialized -Wno-memset-elt-size -Wno-duplicate-decl-specifier"
+DEFCONFIG_FILE=likernx_defconfig
 if [ ! -d "./output/" ]; then
         mkdir ./output/
 fi
 #rm -r ./output/*
 make O=output clean
 make O=output mrproper
-make O=output protein_defconfig
+make O=output $DEFCONFIG_FILE
 make O=output -j4 2>&1 | tee build.log
 
 #Generation package anykernel
@@ -50,7 +51,7 @@ do
         if [ ! -z "$LOCALVERSION" ]; then
                 break;
         fi
-done < arch/arm64/configs/protein_defconfig
+done < arch/arm64/configs/$DEFCONFIG_FILE
 
 /bin/cp -rf $PATH_KERN $PATH_PACKAGE
 cd $PATH_PACKAGE
