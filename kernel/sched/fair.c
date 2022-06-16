@@ -104,14 +104,14 @@ unsigned int sysctl_sched_use_walt_task_util = 1;
  * SCHED_TUNABLESCALING_LINEAR - scaled linear, *ncpus
  */
 enum sched_tunable_scaling sysctl_sched_tunable_scaling
-	= SCHED_TUNABLESCALING_LOG;
+	= SCHED_TUNABLESCALING_LINEAR;
 
 /*
  * Minimal preemption granularity for CPU-bound tasks:
  * (default: 0.75 msec * (1 + ilog(ncpus)), units: nanoseconds)
  */
-unsigned int sysctl_sched_min_granularity = 400000ULL;
-unsigned int normalized_sysctl_sched_min_granularity = 400000ULL;
+unsigned int sysctl_sched_min_granularity = 1000000ULL;
+unsigned int normalized_sysctl_sched_min_granularity = 2000000ULL;
 
 /*
  * is kept at sysctl_sched_latency / sysctl_sched_min_granularity
@@ -122,7 +122,7 @@ static unsigned int sched_nr_latency = 10;
  * After fork, child runs first. If set to 0 (default) then
  * parent will (try to) run first.
  */
-unsigned int sysctl_sched_child_runs_first __read_mostly = 1;
+unsigned int sysctl_sched_child_runs_first __read_mostly;
 
 /*
  * SCHED_OTHER wake-up granularity.
