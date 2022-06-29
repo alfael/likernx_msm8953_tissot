@@ -394,7 +394,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -pipe \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -std=gnu89 \
-                   -fdiagnostics-color=always -ftree-vectorize -pipe
+                   -fdiagnostics-color=always -ftree-vectorize
 ifneq ($(cc-name),clang)
 KBUILD_CFLAGS += -Wno-infinite-recursion -Wno-array-compare -Wno-maybe-uninitialized \
                    -Wno-unused-variable -Wno-unused-function -Wno-unused-label \
@@ -776,9 +776,10 @@ KBUILD_CFLAGS   += -O3
 endif
 
 ifeq ($(cc-name),clang)
-KBUILD_CFLAGS	+= -funsafe-math-optimizations -mfloat-abi=hard -mcpu=cortex-a53 -mtune=cortex-a53 -mfpu=crypto-neon-fp-armv8
+KBUILD_CFLAGS	+= -funsafe-math-optimizations -mfloat-abi=hard -march=armv8-a+crypto+crc -mcpu=cortex-a53+crypto+crc -mtune=cortex-a53 -mfpu=crypto-neon-fp-armv8
+KBUILD_CFLAGS   += -ftrivial-auto-var-init=zero -enable-trivial-auto-var-init-zero-knowing-it-will-be-removed-from-clang
 else
-KBUILD_CFLAGS	+= -funsafe-math-optimizations -mcpu=cortex-a53 -mtune=cortex-a53
+KBUILD_CFLAGS	+= -funsafe-math-optimizations -march=armv8-a+crypto+crc -mcpu=cortex-a53+crypto+crc -mtune=cortex-a53
 endif
 
 ifdef CONFIG_CC_WERROR
